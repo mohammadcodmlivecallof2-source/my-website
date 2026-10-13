@@ -1,0 +1,355 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f4f5f7">
+<title>Reralo | Personal Profile</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #f3f4f6;
+  --card: rgba(255,255,255,.68);
+  --text: #202124;
+  --muted: #777b84;
+  --border: rgba(255,255,255,.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, #ffffff 0, transparent 35%),
+    radial-gradient(circle at 90% 75%, #dfe2e8 0, transparent 35%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 25px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.brand {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.glass-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffffcc, #dfe2e8aa);
+  border: 1px solid white;
+  box-shadow: 0 8px 24px #0000000a,
+              inset 0 1px 1px white;
+  font-size: 21px;
+}
+
+.profile {
+  text-align: center;
+  padding: 32px 22px;
+  background: var(--card);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  box-shadow: 0 20px 60px #2021240b;
+}
+
+.avatar {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 18px;
+  border-radius: 35px;
+  background: linear-gradient(145deg, #ffffff, #dfe2e8);
+  border: 3px solid #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 35px #00000012;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+h1 {
+  font-size: 31px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.username {
+  direction: ltr;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.bio {
+  margin: 17px auto 20px;
+  color: #666a72;
+  font-size: 13px;
+  line-height: 2;
+  max-width: 280px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #ffffff;
+  background: #ffffff90;
+  border-radius: 30px;
+  padding: 7px 14px;
+  font-size: 11px;
+  color: #555a62;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: #777b84;
+  border-radius: 50%;
+}
+
+.section-title {
+  margin: 27px 4px 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.section-title span {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.links {
+  display: grid;
+  gap: 11px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px;
+  text-decoration: none;
+  color: var(--text);
+  background: #ffffff8c;
+  border: 1px solid #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 7px 22px #00000005,
+              inset 0 1px 0 #ffffff;
+  transition: .25s ease;
+}
+
+.link-card:active {
+  transform: scale(.97);
+}
+
+.link-card:hover {
+  transform: translateY(-3px);
+  background: #fff;
+  box-shadow: 0 12px 28px #0000000c;
+}
+
+.link-icon {
+  flex-shrink: 0;
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff, #e5e7eb);
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 12px #00000008;
+  font-size: 21px;
+}
+
+.link-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.link-info strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.link-info small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  direction: ltr;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.arrow {
+  font-size: 19px;
+  color: #a0a3aa;
+}
+
+.note {
+  margin-top: 20px;
+  padding: 17px;
+  border-radius: 22px;
+  background: #e9eaed88;
+  border: 1px solid #ffffffb0;
+  text-align: center;
+  color: #696d75;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.footer {
+  text-align: center;
+  margin: 27px 0 5px;
+  color: #92959c;
+  font-size: 11px;
+}
+
+.footer strong {
+  color: #555963;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 600px) {
+  body { padding-top: 45px; }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+  <header class="topbar">
+    <div class="brand">Reralo.</div>
+    <div class="glass-icon" aria-label="پروفایل">✧</div>
+  </header>
+
+  <section class="profile">
+    <div class="avatar">R.</div>
+
+    <h1>Reralo</h1>
+    <div class="username">@Reralo</div>
+
+    <p class="bio">
+      Welcome to my world.<br>
+      شخصی، متفاوت و فراتر از معمول.
+    </p>
+
+    <div class="badge">
+      <span class="dot"></span>
+      Official Profile
+    </div>
+  </section>
+
+  <div class="section-title">
+    راه‌های ارتباطی
+    <span>CONNECT WITH ME</span>
+  </div>
+
+  <section class="links">
+
+    <a class="link-card"
+       href="https://t.me/Reralo"
+       target="_blank" rel="noopener noreferrer">
+      <div class="link-icon">◈</div>
+      <div class="link-info">
+        <strong>تلگرام شخصی</strong>
+        <small>@Reralo</small>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a class="link-card"
+       href="https://t.me/Reralobot"
+       target="_blank" rel="noopener noreferrer">
+      <div class="link-icon">⌘</div>
+      <div class="link-info">
+        <strong>ربات تلگرام</strong>
+        <small>@Reralobot</small>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a class="link-card"
+       href="https://t.me/Reralo1"
+       target="_blank" rel="noopener noreferrer">
+      <div class="link-icon">▤</div>
+      <div class="link-info">
+        <strong>کانال تلگرام</strong>
+        <small>@Reralo1</small>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a class="link-card"
+       href="https://instagram.com/Reralo01"
+       target="_blank" rel="noopener noreferrer">
+      <div class="link-icon">◎</div>
+      <div class="link-info">
+        <strong>اینستاگرام</strong>
+        <small>@Reralo01</small>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a class="link-card"
+       href="https://t.me/viwsv"
+       target="_blank" rel="noopener noreferrer">
+      <div class="link-icon">◇</div>
+      <div class="link-info">
+        <strong>Username Collection</strong>
+        <small>@viwsv</small>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+  </section>
+
+  <div class="note">
+    ✦ ارتباط مستقیم با Reralo
+    <br>
+    برای مشاهده پروفایل‌ها و ارتباط با من،
+    یکی از گزینه‌های بالا را انتخاب کن.
+  </div>
+
+  <footer class="footer">
+    Crafted with simplicity · <strong>RERALO</strong>
+    <br>
+    © 2026 All Rights Reserved
+  </footer>
+
+</main>
+</body>
+</html>
+```
